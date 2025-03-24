@@ -1,0 +1,37 @@
+#!/bin/bash
+LANG=$1
+
+keep_ratio=0.05
+rank=100
+python run_mlm.py \
+  --model_name_or_path xlm-roberta-base  \
+  --train_file data/anli/${LANG}.txt \
+  --output_dir models/${LANG}_rank_${rank}_keep_ratio_${keep_ratio} \
+  --rank_variant uniform \
+  --rank $rank \
+  --keep_ratio $keep_ratio \
+  --do_train \
+  --do_eval \
+  --overwrite_output_dir \
+  --per_device_train_batch_size 4 \
+  --per_device_eval_batch_size 4 \
+  --gradient_accumulation_steps 2 \
+  --max_seq_length 256 \
+  --save_steps 1000 \
+  --ft_params_num 7667712 \
+  --freeze_layer_norm \
+  --freeze_decoder \
+  --full_l1_reg 0.1 \
+  --sparse_l1_reg 0.1 \
+  --learning_rate 5e-5 \
+  --full_ft_min_steps_per_iteration 30000 \
+  --sparse_ft_min_steps_per_iteration 30000 \
+  --full_ft_max_steps_per_iteration 100000 \
+  --sparse_ft_max_steps_per_iteration 100000 \
+  --full_ft_max_epochs_per_iteration 100 \
+  --sparse_ft_max_epochs_per_iteration 100 \
+  --evaluation_strategy steps \
+  --eval_steps 1000 \
+  --validation_split_percentage 5 \
+  --load_best_model_at_end \
+  --save_total_limit 2 
