@@ -1,0 +1,5 @@
+examples/text-classification/results/*
+examples/text-classification/models/*
+examples/language-modeling/results/*
+examples/language-modeling/models/*
+**/__pycache__/
