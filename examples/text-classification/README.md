@@ -1,4 +1,4 @@
-# Natural Language Inference (NLI)
+## Natural Language Inference (NLI)
 Download the AmericasNLI test data using the below comand:
 
 ```
@@ -7,7 +7,7 @@ git clone https://github.com/nala-cub/AmericasNLI.git
 ```
 Use train_nli.sh script to train DeFT-X task SFT for NLI and eval_nli.sh to evaluate on the AmericasNLI test data.
 
-# Sentiment analysis (SA)
+## Sentiment Analysis (SA)
 To create a version of the SMSA dataset with examples from the test set of NusaX-senti removed, run
 
 ```
