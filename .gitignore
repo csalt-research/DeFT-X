@@ -2,6 +2,7 @@ examples/text-classification/results/*
 examples/text-classification/models/*
 examples/text-classification/data/smsa-trimmed
 examples/text-classification/data/AmericasNLI
+examples/language-modeling/data/*
 examples/language-modeling/results/*
 examples/language-modeling/models/*
 **/__pycache__/

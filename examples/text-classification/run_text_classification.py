@@ -22,7 +22,8 @@ from typing import Optional, List
 
 import datasets
 import numpy as np
-from datasets import ClassLabel, load_dataset, load_metric
+from datasets import ClassLabel, load_dataset
+from evaluate import load
 import torch
 from torch import nn
 
@@ -422,10 +423,8 @@ def main():
     #     metric_kwargs['average'] = 'macro'
     
     if data_args.eval_metric == "xnli":
-        metric = load_metric(data_args.eval_metric)
+        metric = load("accuracy")
         metric_kwargs = {}
-        if data_args.eval_metric == 'f1':
-            metric_kwargs['average'] = 'macro'
 
     # You can define your custom compute_metrics function. It takes an `EvalPrediction` object (a namedtuple with a
     # predictions and label_ids field) and has to return a dictionary string to float.
@@ -457,7 +456,7 @@ def main():
    
     # Initialize our Trainer
     trainer_cls = Trainer
-    trainer_cls = LotteryTicketSparseFineTuner(trainer_cls)
+    trainer_cls = DeFTX_SparseFineTuner(trainer_cls)
     trainer_cls = MultiSourcePlugin(trainer_cls)
     trainer = trainer_cls(
         deft_args=deft_args,

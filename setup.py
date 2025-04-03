@@ -7,17 +7,13 @@ here = pathlib.Path(__file__).parent.resolve()
 long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 install_requires = [
-    'conllu',
-    'datasets==2.20.0',
+    'datasets>=2.11.0',
+    'evaluate==0.4.0',
     'huggingface-hub>=0.0.17',
-    'seqeval',
+    'transformers==4.43.3',
+    'scikit-learn',
+    'accelerate>=0.21.0'
 ]
-try:
-    # Check for pre-existing transformers installations to accomodate
-    # using composable-sft in parallel with adapter-transformers.
-    import transformers
-except ImportError:
-    install_requires.append('transformers==4.43.3')
 
 setup(
     name='DeFT-X',
@@ -29,10 +25,8 @@ setup(
     url='',
     author='',
     author_email='',
-
     package_dir={'': 'src'},
     packages=find_packages(where='src'),
-
     install_requires=install_requires,
     python_requires='>=3.9',
 )
