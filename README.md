@@ -1,3 +1,6 @@
+
+<h1 align="center">DeFT-X: Denoised Sparse Fine-Tuning for Zero-Shot Cross-Lingual Transfer</h1>
+
 ## Installation
 
 ```
