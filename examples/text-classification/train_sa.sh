@@ -2,20 +2,22 @@
 SOURCE_LANG=id
 LANG_FT=cambridgeltl/xlmr-lang-sft-${SOURCE_LANG}-small
 
+rank_variant=variance
 variance_threshold=0.90
 keep_ratio=0.05
 
-MODEL_DIR=models/sa/smsa-trimmed/large/svd_pruned_SFT_${SOURCE_LANG}_r_uniform_100_e_100
+MODEL_DIR=models/sa/smsa-trimmed
 mkdir -p $MODEL_DIR
 
 python run_text_classification.py \
-  --model_name_or_path xlm-roberta-large \
+  --model_name_or_path xlm-roberta-base \
   --train_file data/smsa-trimmed/train.tsv \
   --validation_file data/smsa-trimmed/validation.tsv \
   --output_dir $MODEL_DIR \
+  --rank_variant $rank_variant \
+  --variance_threshold $variance_threshold \
   --keep_ratio $keep_ratio \
   --lang_ft $LANG_FT \
-  --variance_threshold $variance_threshold \
   --do_train \
   --do_eval \
   --per_device_train_batch_size 16 \

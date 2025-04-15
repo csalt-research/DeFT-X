@@ -1,8 +1,7 @@
 #!/bin/bash
-LANG=$1 
-
-LANG_FT=../language-modeling/models/svd_pruned_SFT_${LANG}_r_uniform_200_e_200
-TASK_FT=models/nli/svd_pruned_SFT_en_r_0.90_without_source_lang_initialization
+LANG=bzd 
+LANG_FT=../language-modeling/models/${LANG}
+TASK_FT=models/nli/en
 
 RESULTS_DIR=results/AmericasNLI/${LANG}
 mkdir -p $RESULTS_DIR

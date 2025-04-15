@@ -1,8 +1,8 @@
 #!/bin/bash
-LANG=$1
+LANG=mad
 
-LANG_FT=../language-modeling/models/large/svd_pruned_SFT_${LANG}_r0.90
-TASK_FT=models/sa/smsa-trimmed/large/svd_pruned_SFT_id_r_uniform_100_e_100
+LANG_FT=../language-modeling/models/${LANG}
+TASK_FT=models/sa/smsa-trimmed
 
 RESULTS_DIR="results/NusaX-senti/${LANG}"
 mkdir -p $RESULTS_DIR

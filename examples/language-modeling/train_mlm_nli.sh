@@ -1,15 +1,15 @@
 #!/bin/bash
-LANG=$1
+LANG=bzd
 
-keep_ratio=0.05
+rank_variant=uniform
 rank=100
+
 python run_mlm.py \
   --model_name_or_path xlm-roberta-base  \
   --train_file data/anli/${LANG}.txt \
-  --output_dir models/${LANG}_rank_${rank}_keep_ratio_${keep_ratio} \
-  --rank_variant uniform \
+  --output_dir models/${LANG} \
+  --rank_variant $rank_variant \
   --rank $rank \
-  --keep_ratio $keep_ratio \
   --do_train \
   --do_eval \
   --overwrite_output_dir \

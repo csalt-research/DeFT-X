@@ -1,13 +1,15 @@
 #!/bin/bash
-LANG=$1
+LANG=mad
 
+rank_variant=variance
 keep_ratio=0.05
 variance_threshold=0.90
+
 python run_mlm.py \
   --model_name_or_path xlm-roberta-base \
   --train_file data/sa_corpora/${LANG}.txt \
-  --output_dir models/xlmr_base/${LANG}_var_thres_${variance_threshold}_keep_ratio_${keep_ratio} \
-  --rank_variant variance \
+  --output_dir models/${LANG} \
+  --rank_variant $rank_variant \
   --variance_threshold $variance_threshold \
   --keep_ratio $keep_ratio \
   --do_train \

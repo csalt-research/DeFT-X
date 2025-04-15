@@ -7,7 +7,7 @@ here = pathlib.Path(__file__).parent.resolve()
 long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 install_requires = [
-    'datasets>=2.11.0',
+    'datasets>=2.20.0',
     'evaluate==0.4.0',
     'huggingface-hub>=0.0.17',
     'transformers==4.43.3',

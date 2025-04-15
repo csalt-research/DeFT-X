@@ -53,7 +53,7 @@ def DeFTX_SparseFineTuner(_Trainer):
                                 r = torch.searchsorted(explained_variance / total_variance, torch.tensor(variance_threshold, device=S.device)) + 1
                                 print("Variance threshold = ", variance_threshold)
                             elif(rank_variant == 'uniform'):
-                                r = min(rank, S.shape[0])
+                                r = int(min(rank, S.shape[0]))
                             print(n, r)
                             # Select top-r singular values and vectors
                             U_r = U[:, :r]

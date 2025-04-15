@@ -2,10 +2,10 @@
 SOURCE_LANG=en
 LANG_FT=cambridgeltl/xlmr-lang-sft-${SOURCE_LANG}-small
 
-variance_threshold=0.90
-keep_ratio=0.05
+rank_variant=uniform
+rank=100
 
-MODEL_DIR=models/nli/svd_pruned_SFT_${SOURCE_LANG}_r${variance_threshold}
+MODEL_DIR=models/nli/${SOURCE_LANG}
 mkdir -p $MODEL_DIR
 
 python run_text_classification.py \
@@ -20,8 +20,9 @@ python run_text_classification.py \
   --output_dir $MODEL_DIR \
   --per_device_train_batch_size 32 \
   --per_device_eval_batch_size 32 \
-  --keep_ratio $keep_ratio \
-  --variance_threshold $variance_threshold \
+  --keep_ratio 0.05 \
+  --rank_variant $rank_variant \
+  --rank $rank \
   --full_ft_max_epochs_per_iteration 5 \
   --sparse_ft_max_epochs_per_iteration 5 \
   --save_steps 1000000 \
