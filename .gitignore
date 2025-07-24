@@ -7,3 +7,4 @@ examples/language-modeling/models/*
 **/__pycache__/
 *.egg-info
 *.out
+*.DS_Store
