@@ -31,3 +31,14 @@ pip install -e .
 Examples of DeFT-X training and evaluation are provided in [`examples/`](examples).
 
 ## Citation
+```
+@misc{simon2025deftxdenoisedsparsefinetuning,
+      title={DeFTX: Denoised Sparse Fine-Tuning for Zero-Shot Cross-Lingual Transfer}, 
+      author={Sona Elza Simon and Preethi Jyothi},
+      year={2025},
+      eprint={2505.15090},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2505.15090}, 
+}
+```
