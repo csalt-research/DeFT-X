@@ -1,6 +1,10 @@
 
 <h1 align="center">DeFT-X: Denoised Sparse Fine-Tuning for Zero-Shot Cross-Lingual Transfer</h1>
-[Arxiv Paper](https://arxiv.org/pdf/2505.15090)
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2505.15090">arXiv Paper</a>
+</p>
+
 ## Installation
 
 ```
